@@ -18,6 +18,6 @@ type Inbox struct {
 }
 
 func (in Inbox) DepositedAmount() int64 {
-	// calculate the ammount received from text
+	// TODO;calculate the ammount received from the text text
 	return 0
 }
