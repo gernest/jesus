@@ -24,7 +24,7 @@ func ConnectLocalDB(s string) (*gorm.DB, error) {
 	return &db, err
 }
 
-func RemoteDB(s string)(*gorm.DB, error){
+func RemoteDB(s string) (*gorm.DB, error) {
 	var dns string
 	db_type := "postgres"
 	db_host := "localhost"
