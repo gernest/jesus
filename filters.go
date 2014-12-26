@@ -3,8 +3,9 @@ package jesus
 import "regexp"
 
 func Imethibitishwa(node string) (string, string) {
+	re := regexp.MustCompile(`^Imethibitishwa$`)
 	k, v := "", ""
-	if node == "Imethibitishwa" {
+	if re.MatchString(node) {
 		k = "Thibitisha"
 		v = "Imethibitishwa"
 		return k, v
@@ -13,20 +14,11 @@ func Imethibitishwa(node string) (string, string) {
 }
 
 func Umepokea(node string) (string, string) {
+	re := regexp.MustCompile(`^Umepokea$`)
 	k, v := "", ""
-	if node == "Umepokea" {
+	if re.MatchString(node) {
 		k = "Umepokea"
 		v = node
-		return k, v
-	}
-	return k, v
-}
-func MamaMia(m string) (string, string) {
-	k := ""
-	v := ""
-	if m == "mama" {
-		k = "MamaMia"
-		v = m
 		return k, v
 	}
 	return k, v
@@ -42,4 +34,15 @@ func Tarehe(node string) (string, string) {
 	}
 	return k, v
 
+}
+
+func Kiasi(node string) (string, string) {
+	k, v := "", ""
+	re := regexp.MustCompile(`^(Tsh|Ksh)[1-9]([0-9]{2}|(,[0-9]{3}){1,3})$`)
+	if re.MatchString(node) {
+		k = "Kiasi"
+		v = node
+		return k, v
+	}
+	return k, v
 }
