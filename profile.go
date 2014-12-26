@@ -27,10 +27,8 @@ type Deposit struct {
 	UProfileId int64
 }
 
-
-func (u *UProfile)PrepareDeposit(s *Inbox){
-	d:=Deposit{}
-	d.Amount=s.DepositedAmount()
-	_=append(u.Deposits, d)
+func (u *UProfile) PrepareDeposit(s *Inbox) {
+	d := Deposit{}
+	d.Amount = s.DepositedAmount()
+	_ = append(u.Deposits, d)
 }
-
