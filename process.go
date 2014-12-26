@@ -12,6 +12,7 @@ type TextPipeline struct {
 	Pos         int
 	Out         map[string]string
 	FilterFuncs map[string]interface{}
+	Salio       string
 }
 
 func (s *TextPipeline) Next() string {
@@ -25,6 +26,10 @@ func (s *TextPipeline) Next() string {
 }
 
 func (s *TextPipeline) Process() error {
+	last := len(s.In) - 1
+	s.Salio = s.In[last]
+	s.In[last] = ""
+	fmt.Printf("Salio ni %s \n", s.Salio)
 	s.RegisterFilterFunc()
 	for {
 		node := s.Next()
@@ -65,9 +70,10 @@ func NewTextPipeline(s string) *TextPipeline {
 }
 func (s *TextPipeline) RegisterFilterFunc() {
 	s.FilterFuncs = map[string]interface{}{
-		"MamaMia":   MamaMia,
 		"Thibitsha": Imethibitishwa,
 		"pokea":     Umepokea,
+		"Tarehe":    Tarehe,
+		"Kiasi":     Kiasi,
 	}
 }
 
