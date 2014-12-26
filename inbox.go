@@ -17,7 +17,7 @@ type Inbox struct {
 	Processed         bool      `sql:"not null;DEFAULT:'false'" gorm:"column:Processed"`
 }
 
-func (in Inbox)DepositedAmount() int64{
+func (in Inbox) DepositedAmount() int64 {
 	// calculate the ammount received from text
 	return 0
 }
