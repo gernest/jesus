@@ -3,13 +3,13 @@
 Work with M-Pesa messages froma `gammu-smsd` daemon
 
 Docummentation
-_____________
+______________
 
-Check it here [Docs](http://gernest.github.io/jesus)_
+Check it here [Docs](http://gernest.github.io/jesus)
 
 
 Features
-_________
+________
 
 * Compatible with the smsd schema
 * Filters m-pesa sms for important components
